@@ -1,41 +1,41 @@
-# ambiente virtual
+# # ambiente virtual
 venv/
 env/
 
-# arquivos python
+# # arquivos python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# banco local
+# # banco local
 db.sqlite3
 
-# arquivos do sistema
+# # arquivos do sistema
 .DS_Store
 Thumbs.db
 
-# variáveis de ambiente
+# # variáveis de ambiente
 .env
 
-# logs
+logs
 *.log
 
-# arquivos do vscode
+# # arquivos do vscode
 .vscode/
 
-# arquivos de build
+# # arquivos de build
 dist/
 build/
 
-# migrations compiladas
+# # migrations compiladas
 *.sqlite3
 
-# arquivos temporários
+# # arquivos temporários
 *.tmp
 
-# pasta de media (uploads)
+# # pasta de media (uploads)
 media/
 
-# arquivos estáticos compilados
+# # arquivos estáticos compilados
 staticfiles/
