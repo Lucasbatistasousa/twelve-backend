@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'twelve_db',
+        'NAME': 'twelve',
         'USER': 'postgres',
         'PASSWORD': '@Jesus12',
         'HOST': 'localhost',
