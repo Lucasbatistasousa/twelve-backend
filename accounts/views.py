@@ -47,4 +47,10 @@ def dashboard_view(request):
     elif user.is_aluno:
         return render (request, 'accounts/dashboard_aluno.html')
     
-    return render(request, 'accounts/dasboard.html')
+    if user.is_superuser:
+        return render(request, 'accounts/dashboard_admin.html')
+    
+    # Se chegou aqui, algo está errado — desloga e manda para o login
+    from django.contrib.auth import logout
+    logout(request)
+    return redirect('login')

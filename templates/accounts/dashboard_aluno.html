@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}XII — Meu Painel{% endblock %}
+
+{% block sidebar_nav %}
+<div class="nav-section">
+    <div class="nav-label">Meu Painel</div>
+    <a href="{% url 'dashboard' %}" class="nav-link active">
+        <span class="nav-icon">◈</span> Início
+    </a>
+</div>
+
+<div class="nav-section">
+    <div class="nav-label">Acadêmico</div>
+    <a href="#" class="nav-link">
+        <span class="nav-icon">▦</span> Minhas Notas
+    </a>
+    <a href="#" class="nav-link">
+        <span class="nav-icon">◉</span> Frequência
+    </a>
+    <a href="#" class="nav-link">
+        <span class="nav-icon">▤</span> Questionários
+    </a>
+</div>
+{% endblock %}
+
+{% block page_title %}Meu Painel{% endblock %}
+{% block page_subtitle %}{{ user.get_full_name|default:user.username }}{% endblock %}
+
+{% block topbar_actions %}
+<span class="badge badge-muted">Aluno</span>
+{% endblock %}
+
+{% block content %}
+<div class="grid grid-3" style="margin-bottom: 1.5rem;">
+    <div class="stat-card">
+        <div class="stat-label">Frequência</div>
+        <div class="stat-value">—</div>
+        <div class="stat-sub">Este semestre</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-label">Média Geral</div>
+        <div class="stat-value">—</div>
+        <div class="stat-sub">Todas as matérias</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-label">Questionários</div>
+        <div class="stat-value">—</div>
+        <div class="stat-sub">Pendentes</div>
+    </div>
+</div>
+
+<div class="grid grid-2">
+    <div class="card">
+        <div class="card-header">
+            <span class="card-title">Minhas Notas</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Nenhuma nota lançada ainda.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="card-title">Questionários Pendentes</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Nenhum questionário pendente.</p>
+    </div>
+</div>
+{% endblock %}

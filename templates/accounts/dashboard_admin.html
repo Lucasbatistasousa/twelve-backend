@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %}XII — Dashboard{% endblock %}
+
+{% block sidebar_nav %}
+<div class="nav-section">
+    <div class="nav-label">Geral</div>
+    <a href="{% url 'dashboard' %}" class="nav-link active">
+        <span class="nav-icon">◈</span> Dashboard
+    </a>
+</div>
+
+<div class="nav-section">
+    <div class="nav-label">Gestão</div>
+    <a href="#" class="nav-link">
+        <span class="nav-icon">⊞</span> Turmas
+    </a>
+    <a href="#" class="nav-link">
+        <span class="nav-icon">◉</span> Alunos
+    </a>
+    <a href="#" class="nav-link">
+        <span class="nav-icon">◎</span> Professores
+    </a>
+    <a href="#" class="nav-link">
+        <span class="nav-icon">◌</span> Monitores
+    </a>
+</div>
+
+<div class="nav-section">
+    <div class="nav-label">Relatórios</div>
+    <a href="#" class="nav-link">
+        <span class="nav-icon">▦</span> Frequência
+    </a>
+    <a href="#" class="nav-link">
+        <span class="nav-icon">▤</span> Notas
+    </a>
+</div>
+
+{% if user.is_admin %}
+<div class="nav-section">
+    <div class="nav-label">Sistema</div>
+    <a href="/admin/" class="nav-link">
+        <span class="nav-icon">⚙</span> Admin
+    </a>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block page_title %}Dashboard{% endblock %}
+{% block page_subtitle %}Visão geral — {{ user.igreja }}{% endblock %}
+
+{% block topbar_actions %}
+<span class="badge badge-gold">{{ user.get_role_display }}</span>
+{% endblock %}
+
+{% block content %}
+<div class="grid grid-4" style="margin-bottom: 1.5rem;">
+    <div class="stat-card">
+        <div class="stat-label">Turmas Ativas</div>
+        <div class="stat-value">—</div>
+        <div class="stat-sub">Este semestre</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-label">Alunos</div>
+        <div class="stat-value">—</div>
+        <div class="stat-sub">Matriculados</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-label">Professores</div>
+        <div class="stat-value">—</div>
+        <div class="stat-sub">Ativos</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-label">Frequência Média</div>
+        <div class="stat-value">—</div>
+        <div class="stat-sub">Último mês</div>
+    </div>
+</div>
+
+<div class="grid grid-2">
+    <div class="card">
+        <div class="card-header">
+            <span class="card-title">Turmas Recentes</span>
+            <a href="#" class="btn btn-outline" style="font-size: 0.7rem; padding: 0.3rem 0.75rem;">Ver todas</a>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Nenhuma turma cadastrada ainda.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="card-title">Atividade Recente</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Nenhuma atividade registrada.</p>
+    </div>
+</div>
+{% endblock %}
